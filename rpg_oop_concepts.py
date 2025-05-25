@@ -1,3 +1,28 @@
+
+
+"""
+RPG OOP Concepts Demonstration
+=============================
+
+This file demonstrates core Object-Oriented Programming (OOP) concepts through a simple RPG game implementation.
+Key OOP concepts demonstrated:
+- Classes and Objects
+- Inheritance (Character -> Boss)
+- Composition (Character uses Weapon)
+- Association (Game uses GameLogger)
+- Encapsulation
+- Polymorphism
+
+File Structure:
+--------------
+1. Utility Functions (clear_screen, press_enter, print_border)
+2. Core Classes (GameLogger, Weapon, Character, Boss)
+3. Game Logic (main game loop)
+4. Main Execution (entry point)
+
+Each class and function includes detailed docstrings explaining their purpose and usage.
+"""
+
 import os
 import datetime
 
@@ -57,7 +82,7 @@ class Character:
 
     # Method for the character to attack an enemy
     def attack(self, enemy, logger=None):
-        total_damage = self.damage + (self.weapon.damage_bonus if self.weapon else 0)
+        total_damage = self.damage + (self.weapon.damage_bonus if self.weapon else 0) #if there is a weapon, add the dammage bonus
         # Use getter and setter instead of direct attribute access
         current_health = enemy.get_health()
         enemy.set_health(current_health - total_damage)
